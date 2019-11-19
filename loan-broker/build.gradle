@@ -1,3 +1,27 @@
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'application'
 }
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+dependencies {
+    // add here dependencies specific to loan-broker project
+}
+
+application {
+    mainClassName = 'broker.gui.BrokerMain'
+}
+
+jar {
+    archiveFileName = 'loan-broker.jar' // name of the generated .jar file
+
+    manifest {    // class where the main method is
+        attributes 'Main-Class': 'broker.gui.BrokerMain'
+    }
+    // add all dependencies to the executable .jar file
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
