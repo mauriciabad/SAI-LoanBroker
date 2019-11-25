@@ -9,9 +9,9 @@ import java.util.Objects;
  */
 public class LoanReply {
 
-        private String id;
-        private double interest; // the interest that the bank offers for the requested loan
-        private String bankID; // the unique quote identification of the bank which makes the offer
+    private String id;
+    private double interest; // the interest that the bank offers for the requested loan
+    private String bankID; // the unique quote identification of the bank which makes the offer
 
     public LoanReply() {
         super();

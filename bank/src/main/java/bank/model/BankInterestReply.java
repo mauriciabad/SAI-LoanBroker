@@ -8,6 +8,7 @@ import java.util.Objects;
  * 
  */
 public class BankInterestReply {
+
     private String id;
     private double interest; // the loan interest
     private String bankId; // the unique quote Id

@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import loanclient.model.LoanRequest;
+import loanclient.model.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +26,8 @@ public class LoanClientController implements Initializable {
     @FXML
     private ListView<ListViewLine> lvLoanRequestReply;
 
+    private Messager messager;
+
     public LoanClientController(){
 
     }
@@ -41,7 +44,7 @@ public class LoanClientController implements Initializable {
         ListViewLine listViewLine = new ListViewLine(loanRequest);
         this.lvLoanRequestReply.getItems().add(listViewLine);
 
-        // @TODO: send the loanRequest here...
+        messager.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);
     }
 
@@ -68,5 +71,12 @@ public class LoanClientController implements Initializable {
         tfSsn.setText("123456");
         tfAmount.setText("80000");
         tfTime.setText("30");
+
+        messager = new Messager("loanClient", new Runnable() {
+            @Override
+            public void run() {
+                // TODO: implement what to do when a message is received
+            }
+        });
     }
 }
