@@ -1,18 +1,16 @@
 package broker.gui;
 
 import broker.model.BrokerRequest;
-import broker.model.Messager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jms.TextMessage;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.UUID;
 
 public class BrokerController implements Initializable {
 
@@ -52,13 +50,6 @@ public class BrokerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        messagerToClient = new Messager("loanClient", new Runnable() {
-            @Override
-            public void run() {
-                // TODO: implement what to do when a message is received
-                logger.info("ReceivedMessages: " + messager.getReceivedMessages());
-                logger.info("SentMessages: " + messager.getSentMessages());
-            }
-        }, "bank");
+        messagerToClient = new Messager("loanClient", "bank");
     }
 }

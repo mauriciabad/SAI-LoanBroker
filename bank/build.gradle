@@ -8,7 +8,8 @@ javafx {
 }
 
 dependencies {
-// add here dependencies specific to bank project
+    // add here dependencies specific to bank project
+    compile project(":messager")
 }
 
 application {

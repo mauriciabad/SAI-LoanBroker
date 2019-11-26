@@ -9,6 +9,7 @@ javafx {
 
 dependencies {
     // add here dependencies specific to loan-client project
+    compile project(":messager")
 }
 
 application {
