@@ -61,6 +61,8 @@ public class BrokerController implements Initializable {
             // this.lvLoanRequestReply.getItems().add(listViewLine);
         });
         messagerClient.setOnMessageListUpdated(() -> {
+            // TODO: Clear the list, display all the messages, just build a list of strings, also would be nice to pair req with repl.
+
             //logger.info("ReceivedMessages: " + messagerClient.getReceivedMessages());
             //logger.info("SentMessages: " + messagerClient.getSentMessages());
         });
