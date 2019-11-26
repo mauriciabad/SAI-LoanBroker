@@ -1,6 +1,7 @@
 package broker.gui;
 
 import broker.model.BrokerRequest;
+import broker.model.Messager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -8,6 +9,7 @@ import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jms.TextMessage;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;
@@ -25,23 +27,11 @@ public class BrokerController implements Initializable {
     @FXML
     private ListView<ListViewLine> lvLoanRequestReply;
 
+    private Messager messagerToClient;
+    private Messager messagerToBank;
+
     public BrokerController(){
-
     }
-
-    @FXML
-    public void btnSendLoanRequestClicked(){
-        // create the BankInterestRequest
-        BrokerRequest brokerRequest = new BrokerRequest(UUID.randomUUID().toString());
-
-        //create the ListViewLine line with the request and add it to lvLoanRequestReply
-        ListViewLine listViewLine = new ListViewLine(brokerRequest);
-        this.lvLoanRequestReply.getItems().add(listViewLine);
-
-        // @TODO: send the loanRequest here...
-        logger.info("Sent the loan request: " + brokerRequest);
-    }
-
 
     /**
      * This method returns the line of lvMessages which contains the given loan request.
@@ -62,6 +52,13 @@ public class BrokerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        messagerToClient = new Messager("loanClient", new Runnable() {
+            @Override
+            public void run() {
+                // TODO: implement what to do when a message is received
+                logger.info("ReceivedMessages: " + messager.getReceivedMessages());
+                logger.info("SentMessages: " + messager.getSentMessages());
+            }
+        }, "bank");
     }
 }
