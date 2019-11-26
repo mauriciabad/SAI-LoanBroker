@@ -144,4 +144,7 @@ public class Messager {
     public TextMessage getSentMessage(String id) {
         return sentMessages.get(id);
     }
+
+    public void setOnMessageListUpdated() {
+    }
 }

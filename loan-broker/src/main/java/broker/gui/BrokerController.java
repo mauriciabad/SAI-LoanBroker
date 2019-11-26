@@ -1,6 +1,7 @@
 package broker.gui;
 
 import broker.model.BrokerRequest;
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -9,6 +10,7 @@ import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jms.JMSException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,8 +27,10 @@ public class BrokerController implements Initializable {
     @FXML
     private ListView<ListViewLine> lvLoanRequestReply;
 
-    private Messager messagerToClient;
-    private Messager messagerToBank;
+    private Messager messagerClient;
+    private Messager messagerBank;
+
+    private Gson gson = new Gson();
 
     public BrokerController(){
     }
@@ -50,6 +54,21 @@ public class BrokerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        messagerToClient = new Messager("loanClient", "bank");
+        messagerClient = new Messager("loanClient", "bank");
+        messagerClient.setOnMessageReceieved(msg -> {
+            try {
+                String json = msg.getText();
+                BrokerRequest brokerRequest = gson.fromJson(json, BrokerRequest.class);
+                ListViewLine listViewLine = new ListViewLine(brokerRequest);
+                this.lvLoanRequestReply.getItems().add(listViewLine);
+
+            } catch (JMSException e) {
+                e.printStackTrace();
+            }
+        });
+        messagerClient.setOnMessageListUpdated(() -> {
+            //logger.info("ReceivedMessages: " + messagerClient.getReceivedMessages());
+            //logger.info("SentMessages: " + messagerClient.getSentMessages());
+        });
     }
 }

@@ -75,8 +75,12 @@ public class LoanClientController implements Initializable {
         messager = new Messager("loanClient");
 
         messager.setOnMessageReceieved(msg -> {
-                logger.info("ReceivedMessages: " + messager.getReceivedMessages());
-                logger.info("SentMessages: " + messager.getSentMessages());
+                logger.info("messageReceieved: " + msg);
+        });
+
+        messager.setOnMessageListUpdated(() -> {
+            //logger.info("ReceivedMessages: " + messager.getReceivedMessages());
+            //logger.info("SentMessages: " + messager.getSentMessages());
         });
     }
 }
