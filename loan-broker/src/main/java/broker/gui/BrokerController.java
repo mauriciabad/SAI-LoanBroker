@@ -1,16 +1,16 @@
 package broker.gui;
 
+import bank.model.BankInterestRequest;
 import broker.model.BrokerRequest;
-import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import loanclient.model.LoanRequest;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jms.JMSException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,8 +29,6 @@ public class BrokerController implements Initializable {
 
     private Messager messagerClient;
     private Messager messagerBank;
-
-    private Gson gson = new Gson();
 
     public BrokerController(){
     }
@@ -54,21 +52,19 @@ public class BrokerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        messagerClient = new Messager("loanClient", "bank");
+        messagerClient = new Messager("Client->Broker", LoanRequest.class, "Broker->Bank", BankInterestRequest.class);
         messagerClient.setOnMessageReceieved(msg -> {
-            try {
-                String json = msg.getText();
-                BrokerRequest brokerRequest = gson.fromJson(json, BrokerRequest.class);
-                ListViewLine listViewLine = new ListViewLine(brokerRequest);
-                this.lvLoanRequestReply.getItems().add(listViewLine);
-
-            } catch (JMSException e) {
-                e.printStackTrace();
-            }
+            logger.info("messageReceieved: " + msg);
+            // ListViewLine listViewLine = new ListViewLine((BrokerRequest) msg);
+            // this.lvLoanRequestReply.getItems().add(listViewLine);
         });
         messagerClient.setOnMessageListUpdated(() -> {
             //logger.info("ReceivedMessages: " + messagerClient.getReceivedMessages());
             //logger.info("SentMessages: " + messagerClient.getSentMessages());
+        });
+        messagerClient.enableAutoRedirect((objFrom) -> {
+            LoanRequest o = (LoanRequest) objFrom;
+            return new BankInterestRequest(o.getId(), o.getAmount(), o.getTime());
         });
     }
 }

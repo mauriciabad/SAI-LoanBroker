@@ -10,6 +10,8 @@ javafx {
 dependencies {
     // add here dependencies specific to loan-broker project
     compile project(":messager")
+    compile project(":bank")
+    compile project(":loan-client")
 }
 
 application {

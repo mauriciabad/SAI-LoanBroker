@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
 import messaging.Messager;
 import org.slf4j.Logger;
@@ -72,7 +73,7 @@ public class LoanClientController implements Initializable {
         tfAmount.setText("80000");
         tfTime.setText("30");
 
-        messager = new Messager("loanClient");
+        messager = new Messager("Broker->Client", LoanReply.class, "Client->Broker", LoanRequest.class);
 
         messager.setOnMessageReceieved(msg -> {
                 logger.info("messageReceieved: " + msg);

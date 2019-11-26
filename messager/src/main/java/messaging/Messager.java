@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,8 +13,12 @@ import java.util.Map;
 public class Messager {
 
     private Session session;
-    private Destination receiveDestination;
-    private Destination redirectDestination;
+    private Destination destinationFrom;
+    private Destination destinationTo;
+    private String queueFrom = null;
+    private String queueTo = null;
+    private Type typeFrom = null;
+    private Type typeTo = null;
     private Connection connection;
     private MessageConsumer consumer;
     private MessageProducer producer;
@@ -23,29 +28,28 @@ public class Messager {
 
     private Gson gson = new Gson();
 
-    public void setOnMessageReceieved(MessageRecieved function) {
-        this.onMessageReceieved = function;
-    }
-
-    public void setOnMessageListUpdated(MessageListUpdated function) {
-        this.onMessageListUpdated = function;
-    }
-
     private MessageRecieved onMessageReceieved = null;
     private MessageListUpdated onMessageListUpdated = null;
+    private ParseTypes parseTypes = null;
 
-    public Messager(String queue) {
-        this(queue, null);
-    }
+    public void setOnMessageReceieved(MessageRecieved function) { this.onMessageReceieved = function; }
+    public void setOnMessageListUpdated(MessageListUpdated function) { this.onMessageListUpdated = function; }
+    public void enableAutoRedirect(ParseTypes function) { this.parseTypes = function; }
+    public void disableAutoRedirect() { this.parseTypes = null; }
 
-    public Messager(String queue, String redirectQueue) {
+    public Messager(String queueFrom, Type typeFrom, String queueTo, Type typeTo) {
+        this.queueFrom = queueFrom;
+        this.queueTo = queueTo;
+        this.typeFrom = typeFrom;
+        this.typeTo = typeTo;
+
         try {
             connection = new ActiveMQConnectionFactory("tcp://localhost:61616").createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);;
-            receiveDestination = session.createQueue(queue);
-            if(redirectQueue != null) redirectDestination = session.createQueue(redirectQueue);
+            destinationFrom = session.createQueue(queueFrom);
+            destinationTo = session.createQueue(queueTo);
 
-            consumer = session.createConsumer(receiveDestination);
+            consumer = session.createConsumer(destinationFrom);
             producer = session.createProducer(null);
 
         } catch (JMSException e) {
@@ -55,12 +59,17 @@ public class Messager {
 
         try {
             consumer.setMessageListener(msg -> {
-                receivedMessages.add((TextMessage) msg);
-                if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
-                if (redirectQueue != null) {
-                    redirect((TextMessage) msg);
+                try {
+                    Object message = gson.fromJson(((TextMessage) msg).getText(), typeFrom);
+
+                    receivedMessages.add((TextMessage) msg);
+
+                    if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
+                    if(onMessageReceieved != null)   onMessageReceieved.onMessage(message);
+                    if(parseTypes != null)           send(parseTypes.parse(message));
+                } catch (JMSException e) {
+                    e.printStackTrace();
                 }
-                if(onMessageReceieved != null) onMessageReceieved.onMessage((TextMessage) msg);
             });
 
             connection.start();
@@ -71,22 +80,7 @@ public class Messager {
         }
     }
 
-    public void redirect(TextMessage msg) {
-        try {
-            msg.setJMSDestination(receiveDestination);
-
-            producer.send(receiveDestination, msg);
-
-            sentMessages.put(msg.getJMSMessageID(), msg);
-
-            if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
-
-        } catch (JMSException e) {
-            System.out.println("Error redirecting message: " + msg);
-            e.printStackTrace();
-        }
-    }
-
+    /*
     public void reply(String id, Object message) {
         try {
             TextMessage receivedMsg = getReceivedMessage(id);
@@ -107,25 +101,20 @@ public class Messager {
             e.printStackTrace();
         }
     }
+    */
 
     public void send(Object message) {
         try {
-            TextMessage sentMsg = session.createTextMessage(gson.toJson(message));
-
-            sentMsg.setJMSDestination(receiveDestination);
-
-            producer.send(receiveDestination, sentMsg);
-
+            TextMessage sentMsg = session.createTextMessage(gson.toJson(message, typeTo));
+            sentMsg.setJMSDestination(destinationTo);
+            producer.send(destinationTo, sentMsg);
             sentMessages.put(sentMsg.getJMSMessageID(), sentMsg);
-
             if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
-
         } catch (JMSException e) {
             System.out.println("Error sending message: " + message);
             e.printStackTrace();
         }
     }
-
 
     public List<TextMessage> getReceivedMessages() { return receivedMessages; }
     public List<TextMessage> getSentMessages() { return (List<TextMessage>) sentMessages.values(); }
@@ -141,10 +130,6 @@ public class Messager {
         return null;
     }
 
-    public TextMessage getSentMessage(String id) {
-        return sentMessages.get(id);
-    }
+    public TextMessage getSentMessage(String id) { return sentMessages.get(id); }
 
-    public void setOnMessageListUpdated() {
-    }
 }
