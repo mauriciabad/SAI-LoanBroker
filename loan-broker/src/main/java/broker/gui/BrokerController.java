@@ -1,11 +1,13 @@
 package broker.gui;
 
+import bank.model.BankInterestReply;
 import bank.model.BankInterestRequest;
 import broker.model.BrokerRequest;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
 import messaging.Messager;
 import org.slf4j.Logger;
@@ -25,7 +27,7 @@ public class BrokerController implements Initializable {
     @FXML
     private TextField tfTime;
     @FXML
-    private ListView<ListViewLine> lvLoanRequestReply;
+    private ListView<String> lvLoanRequestReply;
 
     private Messager messagerClient;
     private Messager messagerBank;
@@ -65,6 +67,22 @@ public class BrokerController implements Initializable {
         messagerClient.enableAutoRedirect((objFrom) -> {
             LoanRequest o = (LoanRequest) objFrom;
             return new BankInterestRequest(o.getId(), o.getAmount(), o.getTime());
+        });
+
+
+        messagerBank = new Messager("Bank->Broker", BankInterestReply.class, "Broker->Client", LoanReply.class);
+        messagerBank.setOnMessageReceieved(msg -> {
+            logger.info("messageReceieved: " + msg);
+            // ListViewLine listViewLine = new ListViewLine((BrokerRequest) msg);
+            // this.lvLoanRequestReply.getItems().add(listViewLine);
+        });
+        messagerBank.setOnMessageListUpdated(() -> {
+            //logger.info("ReceivedMessages: " + messagerBank.getReceivedMessages());
+            //logger.info("SentMessages: " + messagerBank.getSentMessages());
+        });
+        messagerBank.enableAutoRedirect((objFrom) -> {
+            BankInterestReply o = (BankInterestReply) objFrom;
+            return new LoanReply(o.getId(), o.getInterest(), o.getBankId());
         });
     }
 }
