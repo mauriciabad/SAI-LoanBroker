@@ -42,7 +42,7 @@ public class LoanClientController implements Initializable {
         int time = Integer.parseInt(tfTime.getText());
         LoanRequest loanRequest = new LoanRequest(UUID.randomUUID().toString(), ssn,amount,time);
 
-        // ListViewLine.addReq(listView, loanRequest);
+        ListViewLine.addReq(listView, loanRequest);
 
         messager.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);

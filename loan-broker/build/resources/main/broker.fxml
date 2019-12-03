@@ -12,7 +12,7 @@
              <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                  <BorderPane prefHeight="309.0" prefWidth="575.0" BorderPane.alignment="CENTER">
                      <center>
-                         <ListView fx:id="lvLoanRequestReply" prefHeight="178.0" prefWidth="229.0"/>
+                         <ListView fx:id="listView" prefHeight="178.0" prefWidth="229.0"/>
                      </center>
                  </BorderPane>
              </ScrollPane>

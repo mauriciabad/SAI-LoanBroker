@@ -390,3 +390,146 @@ java.lang.InterruptedException
 2019-12-03 11:49:54,063 | WARN  | Transport Connection to: tcp://127.0.0.1:62991 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:62991@61616
 2019-12-03 11:50:25,059 | WARN  | Transport Connection to: tcp://127.0.0.1:63045 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63045@61616
 2019-12-03 11:50:25,287 | WARN  | Transport Connection to: tcp://127.0.0.1:63047 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63047@61616
+2019-12-03 13:21:33,278 | WARN  | Transport Connection to: tcp://127.0.0.1:63074 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63074@61616
+2019-12-03 13:21:33,309 | WARN  | Transport Connection to: tcp://127.0.0.1:63076 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63076@61616
+2019-12-03 13:21:33,404 | WARN  | Transport Connection to: tcp://127.0.0.1:63079 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63079@61616
+2019-12-03 13:21:33,404 | WARN  | Transport Connection to: tcp://127.0.0.1:63080 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63080@61616
+2019-12-03 13:22:45,183 | WARN  | Transport Connection to: tcp://127.0.0.1:63382 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63382@61616
+2019-12-03 13:23:56,657 | WARN  | Transport Connection to: tcp://127.0.0.1:63384 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63384@61616
+2019-12-03 13:23:56,657 | WARN  | Transport Connection to: tcp://127.0.0.1:63385 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63385@61616
+2019-12-03 13:23:56,694 | WARN  | Transport Connection to: tcp://127.0.0.1:63380 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63380@61616
+2019-12-03 13:24:44,877 | WARN  | Transport Connection to: tcp://127.0.0.1:63439 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63439@61616
+2019-12-03 13:24:56,847 | WARN  | Transport Connection to: tcp://127.0.0.1:63436 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63436@61616
+2019-12-03 13:24:56,857 | WARN  | Transport Connection to: tcp://127.0.0.1:63437 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63437@61616
+2019-12-03 13:24:57,832 | WARN  | Transport Connection to: tcp://127.0.0.1:63434 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63434@61616
+2019-12-03 13:24:58,808 | WARN  | Transport Connection to: tcp://127.0.0.1:63452 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63452@61616
+2019-12-03 13:26:34,846 | WARN  | Transport Connection to: tcp://127.0.0.1:63488 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63488@61616
+2019-12-03 13:26:34,848 | WARN  | Transport Connection to: tcp://127.0.0.1:63487 failed: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63487@61616
+2019-12-03 13:26:34,846 | WARN  | Transport Connection to: tcp://127.0.0.1:63486 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63486@61616
+2019-12-03 13:26:34,937 | WARN  | Transport Connection to: tcp://127.0.0.1:63483 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63483@61616
+2019-12-03 13:28:03,862 | WARN  | Transport Connection to: tcp://127.0.0.1:63520 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63520@61616
+2019-12-03 13:28:03,862 | WARN  | Transport Connection to: tcp://127.0.0.1:63521 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63521@61616
+2019-12-03 13:28:03,876 | WARN  | Transport Connection to: tcp://127.0.0.1:63516 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63516@61616
+2019-12-03 13:28:03,920 | WARN  | Transport Connection to: tcp://127.0.0.1:63518 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63518@61616
+2019-12-03 13:31:11,741 | WARN  | Transport Connection to: tcp://127.0.0.1:63555 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63555@61616
+2019-12-03 13:31:11,742 | WARN  | Transport Connection to: tcp://127.0.0.1:63553 failed: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63553@61616
+2019-12-03 13:31:11,788 | WARN  | Transport Connection to: tcp://127.0.0.1:63557 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63557@61616
+2019-12-03 13:31:11,788 | WARN  | Transport Connection to: tcp://127.0.0.1:63558 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63558@61616
+2019-12-03 13:31:40,470 | WARN  | Transport Connection to: tcp://127.0.0.1:63594 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63594@61616
+2019-12-03 13:31:40,496 | WARN  | Transport Connection to: tcp://127.0.0.1:63599 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63599@61616
+2019-12-03 13:31:40,496 | WARN  | Transport Connection to: tcp://127.0.0.1:63600 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63600@61616
+2019-12-03 13:31:40,548 | WARN  | Transport Connection to: tcp://127.0.0.1:63598 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63598@61616
+2019-12-03 13:32:51,925 | WARN  | Transport Connection to: tcp://127.0.0.1:63648 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63648@61616
+2019-12-03 13:32:51,926 | WARN  | Transport Connection to: tcp://127.0.0.1:63650 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63650@61616
+2019-12-03 13:32:53,771 | WARN  | Transport Connection to: tcp://127.0.0.1:63649 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63649@61616
+2019-12-03 13:32:53,860 | WARN  | Transport Connection to: tcp://127.0.0.1:63652 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63652@61616
+2019-12-03 13:34:38,215 | WARN  | Transport Connection to: tcp://127.0.0.1:63703 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too (>30000) long: tcp://127.0.0.1:63703 | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ InactivityMonitor Worker
+2019-12-03 13:34:38,282 | WARN  | Transport Connection to: tcp://127.0.0.1:63704 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too (>30000) long: tcp://127.0.0.1:63704 | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ InactivityMonitor Worker
+2019-12-03 13:40:31,265 | WARN  | Transport Connection to: tcp://127.0.0.1:63706 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63706@61616
+2019-12-03 13:40:31,331 | WARN  | Transport Connection to: tcp://127.0.0.1:63701 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63701@61616
+2019-12-03 13:40:52,668 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-62116-1575367575213-0:1) is shutting down | org.apache.activemq.broker.BrokerService | Thread-25
+2019-12-03 13:40:52,683 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | Thread-25
+2019-12-03 13:40:52,683 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | Thread-25
+2019-12-03 13:40:52,683 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2019-12-03 13:40:52,699 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2019-12-03 13:40:52,699 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | Thread-25
+2019-12-03 13:40:52,761 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | Thread-25
+2019-12-03 13:40:52,793 | INFO  | Could not accept connection during shutdown  : {} | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(Unknown Source)[:1.8.0_221]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)[:1.8.0_221]
+	at java.util.concurrent.LinkedBlockingQueue.poll(Unknown Source)[:1.8.0_221]
+	at org.apache.activemq.transport.tcp.TcpTransportServer$1.run(TcpTransportServer.java:494)[activemq-client-5.15.10.jar:5.15.10]
+	at java.lang.Thread.run(Unknown Source)[:1.8.0_221]
+2019-12-03 13:40:52,793 | INFO  | Could not accept connection during shutdown  : {} | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(Unknown Source)[:1.8.0_221]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)[:1.8.0_221]
+	at java.util.concurrent.LinkedBlockingQueue.poll(Unknown Source)[:1.8.0_221]
+	at org.apache.activemq.transport.tcp.TcpTransportServer$1.run(TcpTransportServer.java:494)[activemq-client-5.15.10.jar:5.15.10]
+	at java.lang.Thread.run(Unknown Source)[:1.8.0_221]
+2019-12-03 13:40:52,902 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | Thread-25
+2019-12-03 13:40:52,980 | INFO  | PListStore:[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | Thread-25
+2019-12-03 13:40:52,980 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-25
+2019-12-03 13:40:52,980 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-25
+2019-12-03 13:40:52,980 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | Thread-25
+2019-12-03 13:40:53,058 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-62116-1575367575213-0:1) uptime 2 hours 34 minutes | org.apache.activemq.broker.BrokerService | Thread-25
+2019-12-03 13:40:53,058 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-62116-1575367575213-0:1) is shutdown | org.apache.activemq.broker.BrokerService | Thread-25
+2019-12-03 13:40:53,074 | INFO  | Closing org.apache.activemq.xbean.XBeanBrokerFactory$1@42a311: startup date [Tue Dec 03 11:06:13 CET 2019]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | Thread-25
+2019-12-03 13:41:00,406 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@42a311: startup date [Tue Dec 03 13:41:00 CET 2019]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2019-12-03 13:41:01,594 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:01,672 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2019-12-03 13:41:01,703 | INFO  | PListStore:[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2019-12-03 13:41:01,882 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63833-1575376861734-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:01,975 | INFO  | Listening for connections at: tcp://Bloom:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:41:01,975 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:41:01,991 | INFO  | Listening for connections at: amqp://Bloom:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:41:01,991 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:41:01,991 | INFO  | Listening for connections at: stomp://Bloom:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:41:01,991 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:41:01,991 | INFO  | Listening for connections at: mqtt://Bloom:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:41:02,006 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:41:02,006 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2019-12-03 13:41:02,163 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2019-12-03 13:41:02,272 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@ebd80{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2019-12-03 13:41:02,366 | INFO  | Listening for connections at ws://Bloom:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2019-12-03 13:41:02,366 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:41:02,366 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63833-1575376861734-0:1) started | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:02,381 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:02,381 | WARN  | Store limit is 102400 mb (current store usage is 0 mb). The data directory: C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\kahadb only has 4604 mb of usable space. - resetting to maximum available disk space: 4604 mb | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:02,381 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data only has 4604 mb of usable space. - resetting to maximum available disk space: 4604 mb | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:41:03,209 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2019-12-03 13:41:03,209 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2019-12-03 13:42:23,723 | WARN  | Transport Connection to: tcp://127.0.0.1:63869 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63869@61616
+2019-12-03 13:42:23,723 | WARN  | Transport Connection to: tcp://127.0.0.1:63870 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63870@61616
+2019-12-03 13:42:23,749 | WARN  | Transport Connection to: tcp://127.0.0.1:63866 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63866@61616
+2019-12-03 13:46:52,524 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63833-1575376861734-0:1) is shutting down | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,583 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,594 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,601 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,608 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,682 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,703 | INFO  | PListStore:[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,709 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,712 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,715 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,763 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63833-1575376861734-0:1) uptime 5 minutes | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,767 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63833-1575376861734-0:1) is shutdown | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2019-12-03 13:46:52,773 | INFO  | Closing org.apache.activemq.xbean.XBeanBrokerFactory$1@42a311: startup date [Tue Dec 03 13:41:00 CET 2019]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | ActiveMQ ShutdownHook
+2019-12-03 13:46:59,593 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@42a311: startup date [Tue Dec 03 13:46:59 CET 2019]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2019-12-03 13:47:00,691 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:00,770 | INFO  | KahaDB is version 6 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2019-12-03 13:47:00,815 | INFO  | PListStore:[C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2019-12-03 13:47:00,968 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63917-1575377220841-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:01,258 | INFO  | Listening for connections at: tcp://Bloom:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:47:01,260 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:47:01,265 | INFO  | Listening for connections at: amqp://Bloom:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:47:01,267 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:47:01,272 | INFO  | Listening for connections at: stomp://Bloom:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:47:01,274 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:47:01,280 | INFO  | Listening for connections at: mqtt://Bloom:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2019-12-03 13:47:01,282 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:47:01,292 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2019-12-03 13:47:01,401 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2019-12-03 13:47:01,503 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@ebd80{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2019-12-03 13:47:01,583 | INFO  | Listening for connections at ws://Bloom:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2019-12-03 13:47:01,584 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2019-12-03 13:47:01,585 | INFO  | Apache ActiveMQ 5.15.10 (localhost, ID:Bloom-63917-1575377220841-0:1) started | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:01,587 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:01,590 | WARN  | Store limit is 102400 mb (current store usage is 0 mb). The data directory: C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data\kahadb only has 4605 mb of usable space. - resetting to maximum available disk space: 4605 mb | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:01,592 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: C:\Users\mauri\IdeaProjects\sai-loanbroker\apache-activemq-5.15.10\bin\..\data only has 4604 mb of usable space. - resetting to maximum available disk space: 4604 mb | org.apache.activemq.broker.BrokerService | main
+2019-12-03 13:47:02,275 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2019-12-03 13:47:02,275 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2019-12-03 13:50:34,901 | WARN  | Transport Connection to: tcp://127.0.0.1:63992 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too (>30000) long: tcp://127.0.0.1:63992 | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ InactivityMonitor Worker
+2019-12-03 13:50:35,032 | WARN  | Transport Connection to: tcp://127.0.0.1:63993 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too (>30000) long: tcp://127.0.0.1:63993 | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ InactivityMonitor Worker
+2019-12-03 13:51:26,397 | WARN  | Transport Connection to: tcp://127.0.0.1:63985 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63985@61616
+2019-12-03 13:51:26,787 | WARN  | Transport Connection to: tcp://127.0.0.1:63987 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:63987@61616
+2019-12-03 13:54:41,714 | WARN  | Transport Connection to: tcp://127.0.0.1:64043 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64043@61616
+2019-12-03 13:54:41,831 | WARN  | Transport Connection to: tcp://127.0.0.1:64028 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64028@61616
+2019-12-03 13:54:41,893 | WARN  | Transport Connection to: tcp://127.0.0.1:64045 failed: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64045@61616
+2019-12-03 13:54:41,893 | WARN  | Transport Connection to: tcp://127.0.0.1:64046 failed: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64046@61616
+2019-12-03 13:55:18,296 | WARN  | Transport Connection to: tcp://127.0.0.1:64087 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64087@61616
+2019-12-03 13:56:32,607 | WARN  | Transport Connection to: tcp://127.0.0.1:64117 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64117@61616
+2019-12-03 13:56:32,635 | WARN  | Transport Connection to: tcp://127.0.0.1:64107 failed: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64107@61616
+2019-12-03 13:56:32,734 | WARN  | Transport Connection to: tcp://127.0.0.1:64114 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64114@61616
+2019-12-03 13:56:32,734 | WARN  | Transport Connection to: tcp://127.0.0.1:64115 failed: java.net.SocketException: Connection reset | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:64115@61616

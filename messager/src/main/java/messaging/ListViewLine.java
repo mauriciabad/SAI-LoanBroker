@@ -1,5 +1,6 @@
 package messaging;
 
+import javafx.application.Platform;
 import javafx.scene.control.ListView;
 
 public class ListViewLine {
@@ -24,7 +25,12 @@ public class ListViewLine {
 			}
 		}
 		 */
-		if(!found) listView.getItems().add(new ListViewLine(null, repl));
+		if(!found) {
+			Platform.runLater(() -> {
+				listView.getItems().add(new ListViewLine(null, repl));
+				listView.refresh();
+			});
+		}
 	}
 
 	public static void addReq(ListView<ListViewLine> listView, Object req) {
@@ -38,7 +44,12 @@ public class ListViewLine {
 			}
 		}
 		*/
-		if(!found) listView.getItems().add(new ListViewLine(req, null));
+		if(!found) {
+			Platform.runLater(() -> {
+				listView.getItems().add(new ListViewLine(req, null));
+				listView.refresh();
+			});
+		}
 	}
 
 	@Override

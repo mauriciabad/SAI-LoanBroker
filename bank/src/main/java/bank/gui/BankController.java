@@ -2,7 +2,6 @@ package bank.gui;
 
 import bank.model.BankInterestReply;
 import bank.model.BankInterestRequest;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -45,7 +44,6 @@ class BankController implements Initializable {
         ListViewLine listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
             listViewLine.setRepl(bankInterestReply);
-            Platform.runLater(() -> listView.refresh());
             messager.send(bankInterestReply);
         }
 
