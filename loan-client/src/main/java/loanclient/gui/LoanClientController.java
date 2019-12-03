@@ -42,7 +42,7 @@ public class LoanClientController implements Initializable {
         int time = Integer.parseInt(tfTime.getText());
         LoanRequest loanRequest = new LoanRequest(UUID.randomUUID().toString(), ssn,amount,time);
 
-        this.listView.getItems().add(new ListViewLine(loanRequest));
+        // ListViewLine.addReq(listView, loanRequest);
 
         messager.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);
@@ -55,11 +55,10 @@ public class LoanClientController implements Initializable {
         tfTime.setText("30");
 
         messager = new Messager("Broker->Client", LoanReply.class, "Client->Broker", LoanRequest.class);
-
         messager.setOnMessageReceieved(msg -> {
-                logger.info("messageReceieved: " + msg);
+            logger.info("messageReceived: " + msg);
+            ListViewLine.addRepl(listView, msg);
         });
-
         messager.setOnMessageListUpdated(() -> {
             //logger.info("ReceivedMessages: " + messager.getReceivedMessages());
             //logger.info("SentMessages: " + messager.getSentMessages());

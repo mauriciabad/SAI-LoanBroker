@@ -39,13 +39,10 @@ public class BrokerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         messagerClient = new Messager("Client->Broker", LoanRequest.class, "Broker->Bank", BankInterestRequest.class);
         messagerClient.setOnMessageReceieved(msg -> {
-            logger.info("messageReceieved: " + msg);
-
-            this.listView.getItems().add(new ListViewLine(msg));
+            logger.info("messageReceived: " + msg);
+            ListViewLine.addReq(listView, msg);
         });
         messagerClient.setOnMessageListUpdated(() -> {
-            // TODO: Clear the list, display all the messages, just build a list of strings, also would be nice to pair req with repl.
-
             //logger.info("ReceivedMessages: " + messagerClient.getReceivedMessages());
             //logger.info("SentMessages: " + messagerClient.getSentMessages());
         });
@@ -57,9 +54,8 @@ public class BrokerController implements Initializable {
 
         messagerBank = new Messager("Bank->Broker", BankInterestReply.class, "Broker->Client", LoanReply.class);
         messagerBank.setOnMessageReceieved(msg -> {
-            logger.info("messageReceieved: " + msg);
-
-            ListViewLine.setRepl(listView, msg);
+            logger.info("messageReceived: " + msg);
+            ListViewLine.addRepl(listView, msg);
         });
         messagerBank.setOnMessageListUpdated(() -> {
             //logger.info("ReceivedMessages: " + messagerBank.getReceivedMessages());

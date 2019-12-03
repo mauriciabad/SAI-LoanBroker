@@ -44,14 +44,9 @@ class BankController implements Initializable {
 
         ListViewLine listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
-            listViewLine.setRepl(bankInterestReply); // TODO: this is wrong, use the new class ListViewLine
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    listView.refresh();
-                }
-            });
-         // @TODO send the bankInterestReply
+            listViewLine.setRepl(bankInterestReply);
+            Platform.runLater(() -> listView.refresh());
+            messager.send(bankInterestReply);
         }
 
     }
@@ -59,9 +54,13 @@ class BankController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         messager = new Messager("Broker->Bank", BankInterestRequest.class, "Bank->Broker", BankInterestReply.class);
-
         messager.setOnMessageReceieved(msg -> {
-            logger.info("messageReceieved: " + msg);
+            logger.info("messageReceived: " + msg);
+            ListViewLine.addReq(listView, msg);
+        });
+        messager.setOnMessageListUpdated(() -> {
+            //logger.info("ReceivedMessages: " + messager.getReceivedMessages());
+            //logger.info("SentMessages: " + messager.getSentMessages());
         });
     }
 }
