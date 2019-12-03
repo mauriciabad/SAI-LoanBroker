@@ -9,13 +9,11 @@
    <center>
       <BorderPane prefHeight="288.0" prefWidth="488.0" BorderPane.alignment="CENTER">
          <center>
-             <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                 <BorderPane prefHeight="288.0" prefWidth="488.0" BorderPane.alignment="CENTER">
-                     <center>
-                         <ListView fx:id="listView" prefHeight="178.0" prefWidth="229.0"/>
-                     </center>
-                 </BorderPane>
-             </ScrollPane>
+             <BorderPane prefHeight="288.0" prefWidth="488.0" BorderPane.alignment="CENTER">
+                 <center>
+                     <ListView fx:id="listView" prefHeight="178.0" prefWidth="229.0"/>
+                 </center>
+             </BorderPane>
          </center>
       </BorderPane>
    </center>
