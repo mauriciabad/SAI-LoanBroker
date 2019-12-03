@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9e39c304-cbf5-484d-8d46-7c094d715a40" name="Default Changelist" comment="New ListViewLine class">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/loan-client">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/bank">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/loan-broker">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sai-loanbroker" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sai-loanbroker" type="f1a62948:ProjectNode" />
+                <item name="loan-broker" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sai-loanbroker" type="f1a62948:ProjectNode" />
+                <item name="loan-broker" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sai-loanbroker" type="f1a62948:ProjectNode" />
+                <item name="loan-broker" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\mauri\IdeaProjects\sai-loanbroker" />
+        <option value="C:\Users\mauri\IdeaProjects\sai-loanbroker\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Tmbnynz27H5l4EE1g0TV1whoJq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shared" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="broker.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mauri\IdeaProjects\sai-loanbroker\loan-broker\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Compound.client + broker + bank (ABN Amro)">
+    <configuration default="true" type="CompoundRunConfigurationType">
+      <toRun name="sai-loanbroker:bank [runABNAMRO]" type="GradleRunConfiguration" />
+      <toRun name="sai-loanbroker:loan-client [run]" type="GradleRunConfiguration" />
+      <method v="2" />
+    </configuration>
+    <configuration name="client + broker + bank (ABN Amro)" type="CompoundRunConfigurationType">
+      <toRun name="sai-loanbroker:loan-client [run]" type="GradleRunConfiguration" />
+      <toRun name="sai-loanbroker:loan-broker [run]" type="GradleRunConfiguration" />
+      <toRun name="sai-loanbroker:bank [runABNAMRO]" type="GradleRunConfiguration" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sai-loanbroker [runRABO]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runRABO" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sai-loanbroker:bank [runABNAMRO]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bank" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runABNAMRO" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sai-loanbroker:bank [runING]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bank" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runING" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sai-loanbroker:loan-broker [run]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/loan-broker" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="sai-loanbroker:loan-client [run]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/loan-client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ActiveMQ" type="ShConfigurationType">
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="apache-activemq-5.15.10\bin\activemq start" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.client + broker + bank (ABN Amro)" />
+      <item itemvalue="Gradle.sai-loanbroker:bank [runABNAMRO]" />
+      <item itemvalue="Gradle.sai-loanbroker:loan-client [run]" />
+      <item itemvalue="Gradle.sai-loanbroker:loan-broker [run]" />
+      <item itemvalue="Gradle.sai-loanbroker:bank [runING]" />
+      <item itemvalue="Gradle.sai-loanbroker [runRABO]" />
+      <item itemvalue="Shell Script.ActiveMQ" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.sai-loanbroker [runRABO]" />
+        <item itemvalue="Gradle.sai-loanbroker:bank [runING]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e39c304-cbf5-484d-8d46-7c094d715a40" name="Default Changelist" comment="" />
+      <created>1574068388714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574068388714</updated>
+      <workItem from="1574068393398" duration="8245000" />
+      <workItem from="1574083636052" duration="104000" />
+      <workItem from="1574086728945" duration="1333000" />
+      <workItem from="1574154422458" duration="1522000" />
+      <workItem from="1574160856453" duration="5000" />
+      <workItem from="1574160881800" duration="344000" />
+      <workItem from="1574165379878" duration="5881000" />
+      <workItem from="1574330304888" duration="1101000" />
+      <workItem from="1574704618522" duration="6783000" />
+      <workItem from="1574761699509" duration="10505000" />
+      <workItem from="1575366324340" duration="12636000" />
+      <workItem from="1575385664621" duration="602000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add loan-broker">
+      <created>1574166735023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574166735024</updated>
+    </task>
+    <task id="LOCAL-00002" summary="IDK">
+      <created>1574707361967</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574707361967</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add messaging class">
+      <created>1574764704026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574764704026</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Compiles">
+      <created>1574765307878</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574765307878</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Try to display info in the broker controller">
+      <created>1574766679079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574766679080</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update gitignore">
+      <created>1574767107911</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574767107911</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Messager working queues">
+      <created>1574773764270</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574773764271</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add messagerBank">
+      <created>1574774496667</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574774496668</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add todo">
+      <created>1574774782258</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574774782258</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix compilation error">
+      <created>1575368098134</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575368098135</updated>
+    </task>
+    <task id="LOCAL-00011" summary="New ListViewLine class">
+      <created>1575372006073</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575372006074</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Improved ListViewLine class">
+      <created>1575376824208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575376824209</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Display works!">
+      <created>1575377811310</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575377811310</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Typos">
+      <created>1575381183042</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575381183044</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add loan-broker" />
+    <MESSAGE value="IDK" />
+    <MESSAGE value="Add activeMQ config" />
+    <MESSAGE value="Add messaging class" />
+    <MESSAGE value="Compiles" />
+    <MESSAGE value="Try to display info in the broker controller" />
+    <MESSAGE value="Update gitignore" />
+    <MESSAGE value="Messager working queues" />
+    <MESSAGE value="Add messagerBank" />
+    <MESSAGE value="Add todo" />
+    <MESSAGE value="Fix compilation error" />
+    <MESSAGE value="New ListViewLine class" />
+    <MESSAGE value="Improved ListViewLine class" />
+    <MESSAGE value="Display works!" />
+    <MESSAGE value="Typos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Typos" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="403" y="157" key="#ActiveMQ" timestamp="1575367562241">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="403" y="157" key="#ActiveMQ/0.0.1368.872@0.0.1368.872" timestamp="1575367562241" />
+    <state x="490" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1575371151766">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="490" y="152" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1575371151766" />
+    <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575371894598">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575371894598" />
+    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575386139966">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575386139966" />
+    <state x="132" y="71" key="DiffContextDialog" timestamp="1575369605396">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="132" y="71" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1575369605396" />
+    <state x="506" y="183" key="FileChooserDialogImpl" timestamp="1575382148873">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="506" y="183" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1575382148873" />
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1575383926218">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575383926218" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1575383926218">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575383926218" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1575383926218">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575383926218" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1575383926218">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575383926218" />
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1575383926187">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
+    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1575383926187">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
+    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1575383926187">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1575383926187">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
+    <state x="397" y="152" key="MultipleFileMergeDialog" timestamp="1575385699914">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="397" y="152" key="MultipleFileMergeDialog/0.0.1368.872@0.0.1368.872" timestamp="1575385699914" />
+    <state x="348" y="147" key="RollbackChangesDialog" timestamp="1575382398501">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="348" y="147" key="RollbackChangesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575382398501" />
+    <state x="138" y="22" key="SettingsEditor" timestamp="1575382391689">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="138" y="22" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1575382391689" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1575382274737">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1575382274737" />
+    <state x="492" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575385674072">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="492" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1575385674072" />
+    <state x="377" y="41" width="744" height="789" key="find.popup" timestamp="1575377449574">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="377" y="41" width="744" height="789" key="find.popup/0.0.1368.872@0.0.1368.872" timestamp="1575377449574" />
+    <state x="150" y="62" key="new project wizard" timestamp="1575382067850">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="150" y="62" key="new project wizard/0.0.1368.872@0.0.1368.872" timestamp="1575382067850" />
+    <state x="391" y="64" key="refactoring.ChangeSignatureDialog" timestamp="1575370927883">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="391" y="64" key="refactoring.ChangeSignatureDialog/0.0.1368.872@0.0.1368.872" timestamp="1575370927883" />
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1575371212044">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="347" y="184" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1575371212044" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/messager/src/main/java/messaging/ListViewLine.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/loan-broker/src/main/java/broker/gui/BrokerController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/messager/src/main/java/messaging/ListViewLine.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
