@@ -6,6 +6,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
+import messaging.ListViewLine;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ public class LoanClientController implements Initializable {
     @FXML
     private TextField tfTime;
     @FXML
-    private ListView<ListViewLine> lvLoanRequestReply;
+    private ListView<ListViewLine> listView;
 
     private Messager messager;
 
@@ -41,30 +42,10 @@ public class LoanClientController implements Initializable {
         int time = Integer.parseInt(tfTime.getText());
         LoanRequest loanRequest = new LoanRequest(UUID.randomUUID().toString(), ssn,amount,time);
 
-        //create the ListViewLine line with the request and add it to lvLoanRequestReply
-        ListViewLine listViewLine = new ListViewLine(loanRequest);
-        this.lvLoanRequestReply.getItems().add(listViewLine);
+        this.listView.getItems().add(new ListViewLine(loanRequest));
 
         messager.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);
-    }
-
-
-    /**
-     * This method returns the line of lvMessages which contains the given loan request.
-     * @param request BankInterestRequest for which the line of lvMessages should be found and returned
-     * @return The ListViewLine line of lvMessages which contains the given request
-     */
-    private ListViewLine getRequestReply(LoanRequest request) {
-
-        for (int i = 0; i < lvLoanRequestReply.getItems().size(); i++) {
-            ListViewLine rr =  lvLoanRequestReply.getItems().get(i);
-            if (rr.getLoanRequest() != null && rr.getLoanRequest() == request) {
-                return rr;
-            }
-        }
-
-        return null;
     }
 
     @Override

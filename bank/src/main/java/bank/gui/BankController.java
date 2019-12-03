@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import messaging.ListViewLine;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ class BankController implements Initializable {
 
     @SuppressWarnings("unused")
     @FXML
-    public ListView<ListViewLine> lvBankRequestReply;
+    public ListView<ListViewLine> listView;
     @SuppressWarnings("unused")
     @FXML
     public TextField tfInterest;
@@ -41,13 +42,13 @@ class BankController implements Initializable {
         double interest = Double.parseDouble(tfInterest.getText());
         BankInterestReply bankInterestReply = new BankInterestReply(UUID.randomUUID().toString(), interest, bankId);
 
-        ListViewLine listViewLine = lvBankRequestReply.getSelectionModel().getSelectedItem();
+        ListViewLine listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
-            listViewLine.setBankInterestReply(bankInterestReply);
+            listViewLine.setRepl(bankInterestReply); // TODO: this is wrong, use the new class ListViewLine
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    lvBankRequestReply.refresh();
+                    listView.refresh();
                 }
             });
          // @TODO send the bankInterestReply

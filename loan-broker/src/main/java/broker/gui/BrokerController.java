@@ -2,13 +2,13 @@ package broker.gui;
 
 import bank.model.BankInterestReply;
 import bank.model.BankInterestRequest;
-import broker.model.BrokerRequest;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
+import messaging.ListViewLine;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class BrokerController implements Initializable {
     @FXML
     private TextField tfTime;
     @FXML
-    private ListView<ListViewLine> lvLoanRequestReply;
+    private ListView<ListViewLine> listView;
 
     private Messager messagerClient;
     private Messager messagerBank;
@@ -35,30 +35,13 @@ public class BrokerController implements Initializable {
     public BrokerController(){
     }
 
-    /**
-     * This method returns the line of lvMessages which contains the given loan request.
-     * @param request BankInterestRequest for which the line of lvMessages should be found and returned
-     * @return The ListViewLine line of lvMessages which contains the given request
-     */
-    private ListViewLine getRequestReply(BrokerRequest request) {
-
-        for (int i = 0; i < lvLoanRequestReply.getItems().size(); i++) {
-            ListViewLine rr =  lvLoanRequestReply.getItems().get(i);
-            if (rr.getBrokerRequest() != null && rr.getBrokerRequest() == request) {
-                return rr;
-            }
-        }
-
-        return null;
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         messagerClient = new Messager("Client->Broker", LoanRequest.class, "Broker->Bank", BankInterestRequest.class);
         messagerClient.setOnMessageReceieved(msg -> {
             logger.info("messageReceieved: " + msg);
-            // ListViewLine listViewLine = new ListViewLine((BrokerRequest) msg);
-            // this.lvLoanRequestReply.getItems().add(listViewLine);
+
+            this.listView.getItems().add(new ListViewLine(msg));
         });
         messagerClient.setOnMessageListUpdated(() -> {
             // TODO: Clear the list, display all the messages, just build a list of strings, also would be nice to pair req with repl.
@@ -75,8 +58,8 @@ public class BrokerController implements Initializable {
         messagerBank = new Messager("Bank->Broker", BankInterestReply.class, "Broker->Client", LoanReply.class);
         messagerBank.setOnMessageReceieved(msg -> {
             logger.info("messageReceieved: " + msg);
-            // ListViewLine listViewLine = new ListViewLine((BrokerRequest) msg);
-            // this.lvLoanRequestReply.getItems().add(listViewLine);
+
+            ListViewLine.setRepl(listView, msg);
         });
         messagerBank.setOnMessageListUpdated(() -> {
             //logger.info("ReceivedMessages: " + messagerBank.getReceivedMessages());
