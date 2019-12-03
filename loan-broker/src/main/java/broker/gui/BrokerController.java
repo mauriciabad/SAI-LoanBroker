@@ -38,7 +38,7 @@ public class BrokerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         messagerClient = new Messager("Client->Broker", LoanRequest.class, "Broker->Bank", BankInterestRequest.class);
-        messagerClient.setOnMessageReceieved(msg -> {
+        messagerClient.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             ListViewLine.addReq(listView, msg);
         });
@@ -53,7 +53,7 @@ public class BrokerController implements Initializable {
 
 
         messagerBank = new Messager("Bank->Broker", BankInterestReply.class, "Broker->Client", LoanReply.class);
-        messagerBank.setOnMessageReceieved(msg -> {
+        messagerBank.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             ListViewLine.addRepl(listView, msg);
         });

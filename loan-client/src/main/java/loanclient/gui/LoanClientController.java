@@ -55,7 +55,7 @@ public class LoanClientController implements Initializable {
         tfTime.setText("30");
 
         messager = new Messager("Broker->Client", LoanReply.class, "Client->Broker", LoanRequest.class);
-        messager.setOnMessageReceieved(msg -> {
+        messager.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             ListViewLine.addRepl(listView, msg);
         });

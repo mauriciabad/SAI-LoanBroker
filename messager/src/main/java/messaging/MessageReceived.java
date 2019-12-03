@@ -1,5 +1,5 @@
 package messaging;
 
-public interface MessageRecieved {
+public interface MessageReceived {
     void onMessage(Object message);
 }

@@ -28,11 +28,11 @@ public class Messager {
 
     private Gson gson = new Gson();
 
-    private MessageRecieved onMessageReceieved = null;
+    private MessageReceived onMessageReceieved = null;
     private MessageListUpdated onMessageListUpdated = null;
     private ParseTypes parseTypes = null;
 
-    public void setOnMessageReceieved(MessageRecieved function) { this.onMessageReceieved = function; }
+    public void setOnMessageReceived(MessageReceived function) { this.onMessageReceieved = function; }
     public void setOnMessageListUpdated(MessageListUpdated function) { this.onMessageListUpdated = function; }
     public void enableAutoRedirect(ParseTypes function) { this.parseTypes = function; }
     public void disableAutoRedirect() { this.parseTypes = null; }

@@ -52,7 +52,7 @@ class BankController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         messager = new Messager("Broker->Bank", BankInterestRequest.class, "Bank->Broker", BankInterestReply.class);
-        messager.setOnMessageReceieved(msg -> {
+        messager.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             ListViewLine.addReq(listView, msg);
         });
