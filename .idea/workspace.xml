@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e39c304-cbf5-484d-8d46-7c094d715a40" name="Default Changelist" comment="Remove activemq from git">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-activemq-5.15.10/data/activemq.log" beforeDir="false" afterPath="$PROJECT_DIR$/apache-activemq-5.15.10/data/activemq.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-activemq-5.15.10/data/kahadb/db-1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-activemq-5.15.10/data/kahadb/db.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-activemq-5.15.10/data/kahadb/db.redo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-activemq-5.15.10/data/kahadb/lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank/src/main/resources/bank.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bank/src/main/resources/bank.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan-broker/src/main/resources/broker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/loan-broker/src/main/resources/broker.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan-client/src/main/resources/loanclient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/loan-client/src/main/resources/loanclient.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,7 @@
       <recent name="C:\Users\mauri\IdeaProjects\sai-loanbroker\loan-broker\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.ActiveMQ">
+  <component name="RunManager" selected="Compound.client + broker + bank (ABN Amro)">
     <configuration default="true" type="CompoundRunConfigurationType">
       <toRun name="sai-loanbroker:bank [runABNAMRO]" type="GradleRunConfiguration" />
       <toRun name="sai-loanbroker:loan-client [run]" type="GradleRunConfiguration" />
@@ -286,6 +283,7 @@
       <workItem from="1575366324340" duration="12636000" />
       <workItem from="1575385664621" duration="602000" />
       <workItem from="1575386372220" duration="461000" />
+      <workItem from="1575387112641" duration="1600000" />
     </task>
     <task id="LOCAL-00001" summary="Add loan-broker">
       <created>1574166735023</created>
@@ -426,10 +424,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Typos" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="402" y="84" key="#ActiveMQ" timestamp="1575386788758">
+    <state x="402" y="84" key="#ActiveMQ" timestamp="1575387344457">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="402" y="84" key="#ActiveMQ/0.0.1368.872@0.0.1368.872" timestamp="1575386788758" />
+    <state x="402" y="84" key="#ActiveMQ/0.0.1368.872@0.0.1368.872" timestamp="1575387344457" />
     <state x="490" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1575371151766">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -438,10 +436,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575371894598" />
-    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575386845747">
+    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575388807612">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575386845747" />
+    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575388807612" />
     <state x="28" y="73" key="DiffContextDialog" timestamp="1575386675131">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -450,22 +448,22 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="506" y="183" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1575386553433" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1575386693009">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1575388721891">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575386693009" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1575386693009">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1575388721891">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575386693009" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1575386693009">
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1575388721891">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575386693009" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1575386693009">
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1575388721891">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575386693009" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1575383926187">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
