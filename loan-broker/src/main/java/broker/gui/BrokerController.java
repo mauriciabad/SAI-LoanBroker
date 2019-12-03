@@ -27,7 +27,7 @@ public class BrokerController implements Initializable {
     @FXML
     private TextField tfTime;
     @FXML
-    private ListView<String> lvLoanRequestReply;
+    private ListView<ListViewLine> lvLoanRequestReply;
 
     private Messager messagerClient;
     private Messager messagerBank;
