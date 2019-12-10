@@ -19,13 +19,13 @@ class BankController implements Initializable {
 
     final Logger logger = LoggerFactory.getLogger(getClass());
 
-    private CustomListView<BankInterestRequest, BankInterestReply> customListView;
+    private CustomListView<BankInterestReply, BankInterestRequest> customListView;
 
     private final String bankId;
 
     @SuppressWarnings("unused")
     @FXML
-    public ListView<CustomListViewLine<BankInterestRequest, BankInterestReply>> listView;
+    public ListView<CustomListViewLine<BankInterestReply, BankInterestRequest>> listView;
     @SuppressWarnings("unused")
     @FXML
     public TextField tfInterest;
@@ -43,21 +43,21 @@ class BankController implements Initializable {
         double interest = Double.parseDouble(tfInterest.getText());
         BankInterestReply bankInterestReply = new BankInterestReply(UUID.randomUUID().toString(), interest, bankId);
 
-        CustomListViewLine<BankInterestRequest, BankInterestReply> listViewLine = listView.getSelectionModel().getSelectedItem();
+        CustomListViewLine<BankInterestReply, BankInterestRequest> listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
-            customListView.add(bankInterestReply, listViewLine.getReceived());
-            gateway.reply(listViewLine.getReceived(), bankInterestReply);
+            customListView.add(listViewLine.getSent(), bankInterestReply);
+            gateway.reply(listViewLine.getSent(), bankInterestReply);
         }
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        customListView = new CustomListView<BankInterestRequest, BankInterestReply>(listView);
+        customListView = new CustomListView<BankInterestReply, BankInterestRequest>(listView);
 
         gateway.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
-            customListView.addReceived(msg);
+            customListView.addSent(msg);
         });
     }
 }
