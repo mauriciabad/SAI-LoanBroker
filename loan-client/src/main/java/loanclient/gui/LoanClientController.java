@@ -6,7 +6,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
-import messaging.ListViewLine;
+import messaging.CustomListView;
+import messaging.CustomListViewLine;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,8 @@ public class LoanClientController implements Initializable {
 
     final Logger logger = LoggerFactory.getLogger(getClass());
 
+    private CustomListView<LoanReply, LoanRequest> customListView;
+
     @FXML
     private TextField tfSsn;
     @FXML
@@ -26,13 +29,11 @@ public class LoanClientController implements Initializable {
     @FXML
     private TextField tfTime;
     @FXML
-    private ListView<ListViewLine> listView;
+    private ListView<CustomListViewLine<LoanReply, LoanRequest>> listView;
 
-    private Messager messager;
+    private Messager<LoanReply, LoanRequest> messager;
 
-    public LoanClientController(){
-
-    }
+    public LoanClientController(){}
 
     @FXML
     public void btnSendLoanRequestClicked(){
@@ -42,7 +43,7 @@ public class LoanClientController implements Initializable {
         int time = Integer.parseInt(tfTime.getText());
         LoanRequest loanRequest = new LoanRequest(UUID.randomUUID().toString(), ssn,amount,time);
 
-        ListViewLine.addReq(listView, loanRequest);
+        customListView.addSent(loanRequest);
 
         messager.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);
@@ -54,14 +55,12 @@ public class LoanClientController implements Initializable {
         tfAmount.setText("80000");
         tfTime.setText("30");
 
-        messager = new Messager("Broker->Client", LoanReply.class, "Client->Broker", LoanRequest.class);
-        messager.setOnMessageReceived(msg -> {
-            logger.info("messageReceived: " + msg);
-            ListViewLine.addRepl(listView, msg);
-        });
-        messager.setOnMessageListUpdated(() -> {
-            //logger.info("ReceivedMessages: " + messager.getReceivedMessages());
-            //logger.info("SentMessages: " + messager.getSentMessages());
+        customListView = new CustomListView<LoanReply, LoanRequest>(listView);
+
+        messager = new Messager<LoanReply, LoanRequest>("Client->Broker", "Broker->Client", LoanReply.class, LoanRequest.class);
+        messager.setOnMessageReceived(obj -> {
+            logger.info("messageReceived: " + obj);
+            customListView.addReceived(obj);
         });
     }
 }

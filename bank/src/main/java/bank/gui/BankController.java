@@ -6,7 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import messaging.ListViewLine;
+import messaging.CustomListView;
+import messaging.CustomListViewLine;
 import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,16 +20,18 @@ class BankController implements Initializable {
 
     final Logger logger = LoggerFactory.getLogger(getClass());
 
+    private CustomListView<BankInterestRequest, BankInterestReply> customListView;
+
     private final String bankId;
 
     @SuppressWarnings("unused")
     @FXML
-    public ListView<ListViewLine> listView;
+    public ListView<CustomListViewLine<BankInterestRequest, BankInterestReply>> listView;
     @SuppressWarnings("unused")
     @FXML
     public TextField tfInterest;
 
-    private Messager messager;
+    private Messager<BankInterestRequest, BankInterestReply> messager;
 
     public BankController(String queueName, String bankId){
         this.bankId = bankId;
@@ -41,9 +44,9 @@ class BankController implements Initializable {
         double interest = Double.parseDouble(tfInterest.getText());
         BankInterestReply bankInterestReply = new BankInterestReply(UUID.randomUUID().toString(), interest, bankId);
 
-        ListViewLine listViewLine = listView.getSelectionModel().getSelectedItem();
+        CustomListViewLine<BankInterestRequest, BankInterestReply> listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
-            listViewLine.setRepl(bankInterestReply);
+            customListView.addSent(bankInterestReply);
             messager.send(bankInterestReply);
         }
 
@@ -51,14 +54,12 @@ class BankController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        messager = new Messager("Broker->Bank", BankInterestRequest.class, "Bank->Broker", BankInterestReply.class);
+        customListView = new CustomListView<BankInterestRequest, BankInterestReply>(listView);
+
+        messager = new Messager<BankInterestRequest, BankInterestReply>("Bank->Broker", "Broker->Bank", BankInterestRequest.class, BankInterestReply.class);
         messager.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
-            ListViewLine.addReq(listView, msg);
-        });
-        messager.setOnMessageListUpdated(() -> {
-            //logger.info("ReceivedMessages: " + messager.getReceivedMessages());
-            //logger.info("SentMessages: " + messager.getSentMessages());
+            customListView.addReceived(msg);
         });
     }
 }

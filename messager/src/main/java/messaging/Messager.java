@@ -1,6 +1,8 @@
 package messaging;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
+import com.google.gson.reflect.TypeToken;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
@@ -10,15 +12,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Messager {
+public class Messager<TypeReceived, TypeSent> {
 
     private Session session;
-    private Destination destinationFrom;
-    private Destination destinationTo;
-    private String queueFrom = null;
-    private String queueTo = null;
-    private Type typeFrom = null;
-    private Type typeTo = null;
+    private Destination destinationReceive;
+    private Destination destinationSend;
+    private String queueReceive = null;
+    private String queueSend = null;
+    private Type typeReceived;
+    private Type typeSent;
+
     private Connection connection;
     private MessageConsumer consumer;
     private MessageProducer producer;
@@ -28,28 +31,25 @@ public class Messager {
 
     private Gson gson = new Gson();
 
-    private MessageReceived onMessageReceieved = null;
-    private MessageListUpdated onMessageListUpdated = null;
-    private ParseTypes parseTypes = null;
+    private MessageReceived<TypeReceived> onMessageReceived = null;
+    private MessageReplied<TypeReceived, TypeSent> onMessageReplied = null;
 
-    public void setOnMessageReceived(MessageReceived function) { this.onMessageReceieved = function; }
-    public void setOnMessageListUpdated(MessageListUpdated function) { this.onMessageListUpdated = function; }
-    public void enableAutoRedirect(ParseTypes function) { this.parseTypes = function; }
-    public void disableAutoRedirect() { this.parseTypes = null; }
+    public void setOnMessageReceived(MessageReceived<TypeReceived> function) { this.onMessageReceived = function; }
+    public void setOnMessageReplied(MessageReplied<TypeReceived, TypeSent> function) { this.onMessageReplied = function; }
 
-    public Messager(String queueFrom, Type typeFrom, String queueTo, Type typeTo) {
-        this.queueFrom = queueFrom;
-        this.queueTo = queueTo;
-        this.typeFrom = typeFrom;
-        this.typeTo = typeTo;
+    public Messager(String queueSend, String queueReceive, Class<TypeReceived> typeReceived, Class<TypeSent> typeSent) {
+        this.queueReceive = queueReceive;
+        this.queueSend = queueSend;
+        this.typeReceived = typeReceived;
+        this.typeSent = typeSent;
 
         try {
             connection = new ActiveMQConnectionFactory("tcp://localhost:61616").createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);;
-            destinationFrom = session.createQueue(queueFrom);
-            destinationTo = session.createQueue(queueTo);
+            destinationReceive = session.createQueue(this.queueReceive);
+            destinationSend = session.createQueue(this.queueSend);
 
-            consumer = session.createConsumer(destinationFrom);
+            consumer = session.createConsumer(destinationReceive);
             producer = session.createProducer(null);
 
         } catch (JMSException e) {
@@ -58,22 +58,25 @@ public class Messager {
         }
 
         try {
-            consumer.setMessageListener(msg -> {
-                try {
-                    Object message = gson.fromJson(((TextMessage) msg).getText(), typeFrom);
+            if (consumer != null) {
+                consumer.setMessageListener(msg -> {
+                    try {
+                        TypeReceived messageParsed = gson.fromJson(((TextMessage) msg).getText(), typeReceived);
+                        receivedMessages.add((TextMessage) msg);
+                        if(onMessageReceived != null) onMessageReceived.onMessage(messageParsed);
 
-                    receivedMessages.add((TextMessage) msg);
+                        TextMessage pairMessage = getReceivedMessage(msg.getJMSCorrelationID());
+                        if (pairMessage != null) {
+                            TypeSent pairMessageParsed = gson.fromJson(pairMessage.getText(), typeSent);
+                            if(onMessageReplied != null) onMessageReplied.onMessage(pairMessageParsed, messageParsed);
+                        }
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+                });
 
-                    if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
-                    if(onMessageReceieved != null)   onMessageReceieved.onMessage(message);
-                    if(parseTypes != null)           send(parseTypes.parse(message));
-                } catch (JMSException e) {
-                    e.printStackTrace();
-                }
-            });
-
-            connection.start();
-
+                connection.start();
+            }
         } catch (JMSException e) {
             System.out.println("Error creating message listener");
             e.printStackTrace();
@@ -81,7 +84,7 @@ public class Messager {
     }
 
     /*
-    public void reply(String id, Object message) {
+    public void reply(String id, TypeSent message) {
         try {
             TextMessage receivedMsg = getReceivedMessage(id);
             TextMessage sentMsg = session.createTextMessage(gson.toJson(message));
@@ -103,23 +106,22 @@ public class Messager {
     }
     */
 
-    public void send(Object message) {
+    public void send(TypeSent message) {
         try {
-            TextMessage sentMsg = session.createTextMessage(gson.toJson(message, typeTo));
-            sentMsg.setJMSDestination(destinationTo);
-            producer.send(destinationTo, sentMsg);
+            TextMessage sentMsg = session.createTextMessage(gson.toJson(message, typeSent));
+            sentMsg.setJMSDestination(destinationSend);
+            producer.send(destinationSend, sentMsg);
             sentMessages.put(sentMsg.getJMSMessageID(), sentMsg);
-            if(onMessageListUpdated != null) onMessageListUpdated.onMessageListUpdate();
         } catch (JMSException e) {
             System.out.println("Error sending message: " + message);
             e.printStackTrace();
         }
     }
 
-    public List<TextMessage> getReceivedMessages() { return receivedMessages; }
-    public List<TextMessage> getSentMessages() { return (List<TextMessage>) sentMessages.values(); }
+    private List<TextMessage> getReceivedMessages() { return receivedMessages; }
+    private List<TextMessage> getSentMessages() { return (List<TextMessage>) sentMessages.values(); }
 
-    public TextMessage getReceivedMessage(String id) {
+    private TextMessage getReceivedMessage(String id) {
         for (TextMessage msg : receivedMessages) {
             try {
                 if(msg.getJMSMessageID().equals(id)) return msg;
@@ -130,6 +132,6 @@ public class Messager {
         return null;
     }
 
-    public TextMessage getSentMessage(String id) { return sentMessages.get(id); }
+    private TextMessage getSentMessage(String id) { return sentMessages.get(id); }
 
 }
