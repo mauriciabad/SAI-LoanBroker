@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e39c304-cbf5-484d-8d46-7c094d715a40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/sai_loanbroker_loan_broker_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/loan-broker/sai-loanbroker.loan-broker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sai-loanbroker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loan-broker/web/WEB-INF/sun-jaxws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loan-broker/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loan-broker/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messager/src/main/java/messaging/ApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/messager/src/main/java/messaging/ApiClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +87,13 @@
       </set>
     </option>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectId" id="1Tmbnynz27H5l4EE1g0TV1whoJq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -98,7 +110,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Apache Software Foundation/Tomcat 9.0/webapps/credit.war" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -236,6 +248,79 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="%IDEA_RUN:TOMCAT_HOME%/webapps/archive.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/archive" />
+          </settings>
+        </file>
+        <file path="%IDEA_RUN:TOMCAT_HOME%/webapps/credit.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/credit" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_sai-loanbroker" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53283" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Compound.client + broker + bank (ABN Amro)" />
       <item itemvalue="Gradle.sai-loanbroker:bank [runABNAMRO]" />
@@ -244,6 +329,7 @@
       <item itemvalue="Gradle.sai-loanbroker:bank [runING]" />
       <item itemvalue="Gradle.sai-loanbroker [runRABO]" />
       <item itemvalue="Shell Script.ActiveMQ" />
+      <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
@@ -257,7 +343,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -288,6 +384,9 @@
       <workItem from="1575385664621" duration="602000" />
       <workItem from="1575386372220" duration="461000" />
       <workItem from="1575387112641" duration="1600000" />
+      <workItem from="1576011309979" duration="279000" />
+      <workItem from="1576011794745" duration="235000" />
+      <workItem from="1576012319518" duration="1063000" />
     </task>
     <task id="LOCAL-00001" summary="Add loan-broker">
       <created>1574166735023</created>
@@ -436,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575997802262</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add error response">
+      <created>1575997986962</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1575997986963</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,17 +587,38 @@
     <MESSAGE value="Fix bank list order" />
     <MESSAGE value="Works reply req" />
     <MESSAGE value="Add gatewayREST" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add gatewayREST" />
+    <MESSAGE value="Add error response" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add error response" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="402" y="84" key="#ActiveMQ" timestamp="1575387344457">
+    <state x="402" y="84" key="#ActiveMQ" timestamp="1576013260686">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="402" y="84" key="#ActiveMQ/0.0.1368.872@0.0.1368.872" timestamp="1575387344457" />
+    <state x="402" y="84" key="#ActiveMQ/0.0.1368.872@0.0.1368.872" timestamp="1576013260686" />
+    <state x="381" y="53" width="618" height="765" key="#Tomcat" timestamp="1576011591559">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="381" y="53" width="618" height="765" key="#Tomcat/0.0.1368.872@0.0.1368.872" timestamp="1576011591559" />
+    <state x="278" y="95" key="#Tomcat_Server" timestamp="1576011589818">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="278" y="95" key="#Tomcat_Server/0.0.1368.872@0.0.1368.872" timestamp="1576011589818" />
+    <state x="381" y="53" key="#Unnamed" timestamp="1576011575625">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="381" y="53" key="#Unnamed/0.0.1368.872@0.0.1368.872" timestamp="1576011575625" />
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576013181050">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="140" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1576013181050" />
     <state x="490" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1575985373877">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="490" y="152" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1575985373877" />
+    <state x="322" y="125" width="729" height="621" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1576011379057">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="322" y="125" width="729" height="621" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1368.872@0.0.1368.872" timestamp="1576011379057" />
     <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575371894598">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -500,10 +627,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="643" y="201" width="670" height="593" key="#xdebugger.evaluate/0.0.1368.872@0.0.1368.872" timestamp="1575997889281" />
-    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575997798107">
+    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575997985430">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575997798107" />
+    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575997985430" />
     <state width="400" height="466" key="DebuggerActiveHint" timestamp="1575997933389">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -512,42 +639,58 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="28" y="73" key="DiffContextDialog/0.0.1368.872@0.0.1368.872" timestamp="1575386675131" />
-    <state x="506" y="183" key="FileChooserDialogImpl" timestamp="1575386553433">
+    <state x="506" y="183" key="FileChooserDialogImpl" timestamp="1576011535532">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="506" y="183" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1575386553433" />
-    <state width="663" height="281" key="GridCell.Tab.0.bottom" timestamp="1575997832041">
+    <state x="506" y="183" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1576011535528" />
+    <state width="663" height="227" key="GridCell.Tab.0.bottom" timestamp="1576013432828">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.0.center" timestamp="1575997832041">
+    <state width="663" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576013432828" />
+    <state width="663" height="227" key="GridCell.Tab.0.center" timestamp="1576013432828">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.0.left" timestamp="1575997832039">
+    <state width="663" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1576013432828" />
+    <state width="663" height="227" key="GridCell.Tab.0.left" timestamp="1576013432827">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575997832039" />
-    <state width="663" height="281" key="GridCell.Tab.0.right" timestamp="1575997832041">
+    <state width="663" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1576013432827" />
+    <state width="663" height="227" key="GridCell.Tab.0.right" timestamp="1576013432828">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.1.bottom" timestamp="1575997832041">
+    <state width="663" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1576013432828" />
+    <state width="443" height="227" key="GridCell.Tab.1.bottom" timestamp="1576013196025">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.1.center" timestamp="1575997832041">
+    <state width="443" height="227" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.1.center" timestamp="1576013196025">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.1.left" timestamp="1575997832041">
+    <state width="443" height="227" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.1.left" timestamp="1576013196025">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
-    <state width="663" height="281" key="GridCell.Tab.1.right" timestamp="1575997832041">
+    <state width="443" height="227" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.1.right" timestamp="1576013196025">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="663" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1575997832041" />
+    <state width="443" height="227" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.2.bottom" timestamp="1576013196025">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="443" height="227" key="GridCell.Tab.2.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.2.center" timestamp="1576013196025">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="443" height="227" key="GridCell.Tab.2.center/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.2.left" timestamp="1576013196025">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="443" height="227" key="GridCell.Tab.2.left/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
+    <state width="443" height="227" key="GridCell.Tab.2.right" timestamp="1576013196025">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="443" height="227" key="GridCell.Tab.2.right/0.0.1368.872@0.0.1368.872" timestamp="1576013196025" />
     <state x="397" y="152" key="MultipleFileMergeDialog" timestamp="1575385699914">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -560,10 +703,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="138" y="22" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1575382391689" />
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1575997805560">
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2" timestamp="1575997988930">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1575997805560" />
+    <state x="277" y="169" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1575997988930" />
     <state x="492" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575385674072">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
