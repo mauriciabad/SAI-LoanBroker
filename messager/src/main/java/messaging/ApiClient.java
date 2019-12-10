@@ -35,7 +35,11 @@ public class ApiClient<TypeReceived, TypeSent> {
 
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
             .thenAccept(response -> {
-                if(response.statusCode() / 100 == 2 && onReply != null) onReply.onMessage(gson.fromJson(response.body(), typeReceived));
+                if(response.statusCode() / 100 == 2) {
+                    if(onReply != null) onReply.onMessage(gson.fromJson(response.body(), typeReceived));
+                }else{
+                    System.out.println("Response error " + response.statusCode());
+                }
             });
     }
 }
