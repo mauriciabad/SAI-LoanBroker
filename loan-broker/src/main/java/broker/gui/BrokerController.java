@@ -1,5 +1,6 @@
 package broker.gui;
 
+import bank.model.ArchiveRequest;
 import bank.model.BankInterestReply;
 import bank.model.BankInterestRequest;
 import javafx.fxml.FXML;
@@ -10,7 +11,6 @@ import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
 import messaging.CustomListView;
 import messaging.CustomListViewLine;
-import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,6 +34,7 @@ public class BrokerController implements Initializable {
 
     private BrokerGatewayToLoanClient gatewayClient = new BrokerGatewayToLoanClient();
     private BrokerGatewayToBank gatewayBank = new BrokerGatewayToBank();
+    private BrokerGatewayToArchive gatewayAchieve = new BrokerGatewayToArchive();
 
     public BrokerController() {}
 
@@ -49,6 +50,8 @@ public class BrokerController implements Initializable {
             gatewayBank.send(sent, (reply) -> {
                 logger.info("messageReplied: " + reply);
                 customListView.add(original, reply);
+
+                if(reply.getInterest() >= 0) gatewayAchieve.send(new ArchiveRequest(original.getSsn(), original.getAmount(), reply.getBankId(), reply.getInterest(), original.getTime()));
 
                 gatewayClient.reply(original, new LoanReply(reply.getId(), reply.getInterest(), reply.getBankId()));
             });
