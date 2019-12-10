@@ -32,8 +32,8 @@ public class BrokerController implements Initializable {
     @FXML
     private ListView<CustomListViewLine<BankInterestReply, LoanRequest>> listView;
 
-    private Messager<LoanRequest, LoanReply> messagerClient;
-    private Messager<BankInterestReply, BankInterestRequest> messagerBank;
+    private BrokerGatewayToLoanClient gatewayClient;
+    private BrokerGatewayToBank gatewayBank;
 
     public BrokerController() {}
 
@@ -41,18 +41,18 @@ public class BrokerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         customListView = new CustomListView<BankInterestReply, LoanRequest>(listView);
 
-        messagerClient = new Messager<LoanRequest, LoanReply>("Broker->Client", "Client->Broker", LoanRequest.class, LoanReply.class);
-        messagerClient.setOnMessageReceived(msg -> {
+        gatewayClient = new BrokerGatewayToLoanClient();
+        gatewayClient.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             customListView.addSent(msg);
-            messagerBank.send(new BankInterestRequest(msg.getId(), msg.getAmount(), msg.getTime()));
+            gatewayBank.send(new BankInterestRequest(msg.getId(), msg.getAmount(), msg.getTime()));
         });
 
-        messagerBank = new Messager<BankInterestReply, BankInterestRequest>("Broker->Bank", "Bank->Broker", BankInterestReply.class, BankInterestRequest.class);
-        messagerBank.setOnMessageReceived(msg -> {
+        gatewayBank = new BrokerGatewayToBank();
+        gatewayBank.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             customListView.addReceived(msg);
-            messagerClient.send(new LoanReply(msg.getId(), msg.getInterest(), msg.getBankId()));
+            gatewayClient.send(new LoanReply(msg.getId(), msg.getInterest(), msg.getBankId()));
         });
     }
 }

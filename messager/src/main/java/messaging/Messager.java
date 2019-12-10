@@ -37,6 +37,9 @@ public class Messager<TypeReceived, TypeSent> {
     public void setOnMessageReceived(MessageReceived<TypeReceived> function) { this.onMessageReceived = function; }
     public void setOnMessageReplied(MessageReplied<TypeReceived, TypeSent> function) { this.onMessageReplied = function; }
 
+    public MessageReceived<TypeReceived> getOnMessageReceived() { return onMessageReceived; }
+    public MessageReplied<TypeReceived, TypeSent> getOnMessageReplied() { return onMessageReplied; }
+
     public Messager(String queueSend, String queueReceive, Class<TypeReceived> typeReceived, Class<TypeSent> typeSent) {
         this.queueReceive = queueReceive;
         this.queueSend = queueSend;

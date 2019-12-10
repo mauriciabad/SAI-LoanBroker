@@ -8,7 +8,6 @@ import loanclient.model.LoanReply;
 import loanclient.model.LoanRequest;
 import messaging.CustomListView;
 import messaging.CustomListViewLine;
-import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +30,7 @@ public class LoanClientController implements Initializable {
     @FXML
     private ListView<CustomListViewLine<LoanReply, LoanRequest>> listView;
 
-    private Messager<LoanReply, LoanRequest> messager;
+    private LoanClientGatewayToBroker gateway;
 
     public LoanClientController(){}
 
@@ -45,7 +44,7 @@ public class LoanClientController implements Initializable {
 
         customListView.addSent(loanRequest);
 
-        messager.send(loanRequest);
+        gateway.send(loanRequest);
         logger.info("Sent the loan request: " + loanRequest);
     }
 
@@ -57,10 +56,10 @@ public class LoanClientController implements Initializable {
 
         customListView = new CustomListView<LoanReply, LoanRequest>(listView);
 
-        messager = new Messager<LoanReply, LoanRequest>("Client->Broker", "Broker->Client", LoanReply.class, LoanRequest.class);
-        messager.setOnMessageReceived(obj -> {
-            logger.info("messageReceived: " + obj);
-            customListView.addReceived(obj);
+        gateway = new LoanClientGatewayToBroker();
+        gateway.setOnMessageReplied((reqObj, replObj) -> {
+            logger.info("messageReceived: " + replObj);
+            customListView.addReceived(replObj);
         });
     }
 }
