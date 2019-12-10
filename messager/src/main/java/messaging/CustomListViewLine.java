@@ -1,8 +1,5 @@
 package messaging;
 
-import javafx.application.Platform;
-import javafx.scene.control.ListView;
-
 public class CustomListViewLine<TypeReceived, TypeSent> {
 	
 	private TypeSent sent;

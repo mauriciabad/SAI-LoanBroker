@@ -57,9 +57,9 @@ public class LoanClientController implements Initializable {
         customListView = new CustomListView<LoanReply, LoanRequest>(listView);
 
         gateway = new LoanClientGatewayToBroker();
-        gateway.setOnMessageReceived(obj -> {
-            logger.info("messageReceived: " + obj);
-            customListView.addReceived(obj);
+        gateway.setOnMessageReplied((reqObj, replObj) -> {
+            logger.info("messageReceived: " + replObj);
+            customListView.add(replObj, reqObj);
         });
     }
 }

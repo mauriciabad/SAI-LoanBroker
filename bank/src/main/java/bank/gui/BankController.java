@@ -1,6 +1,6 @@
 package bank.gui;
 
-import bank.model.BankInterestReply;
+import bank.model .BankInterestReply;
 import bank.model.BankInterestRequest;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +8,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import messaging.CustomListView;
 import messaging.CustomListViewLine;
-import messaging.Messager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

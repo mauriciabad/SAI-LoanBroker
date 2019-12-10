@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9e39c304-cbf5-484d-8d46-7c094d715a40" name="Default Changelist" comment="Remove activemq from git">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank/src/main/resources/bank.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bank/src/main/resources/bank.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan-broker/src/main/resources/broker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/loan-broker/src/main/resources/broker.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan-client/src/main/resources/loanclient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/loan-client/src/main/resources/loanclient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank/src/main/java/bank/gui/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank/src/main/java/bank/gui/BankController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan-client/src/main/java/loanclient/gui/LoanClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loan-client/src/main/java/loanclient/gui/LoanClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messager/src/main/java/messaging/CustomListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/messager/src/main/java/messaging/CustomListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messager/src/main/java/messaging/CustomListViewLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/messager/src/main/java/messaging/CustomListViewLine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,10 +437,14 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575371894598" />
-    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575388807612">
+    <state x="1051" y="279" key="#xdebugger.evaluate" timestamp="1575979876789">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575388807612" />
+    <state x="1051" y="279" key="#xdebugger.evaluate/0.0.1368.872@0.0.1368.872" timestamp="1575979876789" />
+    <state x="208" y="30" key="CommitChangelistDialog2" timestamp="1575978918768">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="208" y="30" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1575978918768" />
     <state x="28" y="73" key="DiffContextDialog" timestamp="1575386675131">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -448,46 +453,46 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="506" y="183" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1575386553433" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1575388721891">
+    <state width="1326" height="281" key="GridCell.Tab.0.bottom" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1575388721891">
+    <state width="1326" height="281" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.0.center" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1575388721891">
+    <state width="1326" height="281" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.0.left" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1575388721891">
+    <state width="1326" height="281" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.0.right" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575388721891" />
-    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1575383926187">
+    <state width="1326" height="281" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
-    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1575383926187">
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
-    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1575383926187">
+    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
-    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1575383926187">
+    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1575980848370">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1575383926187" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1575980848370" />
     <state x="397" y="152" key="MultipleFileMergeDialog" timestamp="1575385699914">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="397" y="152" key="MultipleFileMergeDialog/0.0.1368.872@0.0.1368.872" timestamp="1575385699914" />
-    <state x="348" y="147" key="RollbackChangesDialog" timestamp="1575382398501">
+    <state x="348" y="147" key="RollbackChangesDialog" timestamp="1575978883327">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="348" y="147" key="RollbackChangesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575382398501" />
+    <state x="348" y="147" key="RollbackChangesDialog/0.0.1368.872@0.0.1368.872" timestamp="1575978883327" />
     <state x="138" y="22" key="SettingsEditor" timestamp="1575382391689">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -526,14 +531,14 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/loan-broker/src/main/java/broker/gui/BrokerController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/messager/src/main/java/messaging/ListViewLine.java</url>
           <line>27</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/messager/src/main/java/messaging/CustomListView.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
