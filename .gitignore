@@ -1,4 +1,4 @@
 # Project exclude paths
 .gradle/
 build/
-/apache-activemq-5.15.10/data/kahadb
+/apache-activemq-5.15.10/data/
