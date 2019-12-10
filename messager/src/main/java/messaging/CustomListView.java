@@ -34,6 +34,7 @@ public class CustomListView<TypeReceived, TypeSent> {
             });
         }
     }
+
     public void addReceived(TypeReceived received) {
         boolean found = false;
 

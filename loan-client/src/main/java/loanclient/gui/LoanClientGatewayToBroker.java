@@ -15,9 +15,6 @@ public class LoanClientGatewayToBroker extends MessagerGateway<LoanReply, LoanRe
 
     public void send(LoanRequest message){ gateway.send(message); }
 
-    public void setOnMessageReplied(MessageReplied<LoanReply, LoanRequest> function) { gateway.setOnMessageReplied(function); }
-    public MessageReplied<LoanReply, LoanRequest> getOnMessageReplied() { return gateway.getOnMessageReplied(); }
-
     public void setOnMessageReceived(MessageReceived<LoanReply> function) { gateway.setOnMessageReceived(function); }
     public MessageReceived<LoanReply> getOnMessageReceived() { return gateway.getOnMessageReceived(); }
 }

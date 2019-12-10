@@ -12,9 +12,6 @@ public class MessagerGatewayJMS<TypeReceived, TypeSent> extends MessagerGateway<
         messager.send(message);
     }
 
-    public void setOnMessageReplied(MessageReplied<TypeReceived, TypeSent> function) { messager.setOnMessageReplied(function); }
-    public MessageReplied<TypeReceived, TypeSent> getOnMessageReplied() { return messager.getOnMessageReplied(); }
-
     public void setOnMessageReceived(MessageReceived<TypeReceived> function) { messager.setOnMessageReceived(function); }
     public MessageReceived<TypeReceived> getOnMessageReceived() { return messager.getOnMessageReceived(); }
 }

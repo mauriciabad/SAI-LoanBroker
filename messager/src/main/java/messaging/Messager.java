@@ -32,13 +32,10 @@ public class Messager<TypeReceived, TypeSent> {
     private Gson gson = new Gson();
 
     private MessageReceived<TypeReceived> onMessageReceived = null;
-    private MessageReplied<TypeReceived, TypeSent> onMessageReplied = null;
 
     public void setOnMessageReceived(MessageReceived<TypeReceived> function) { this.onMessageReceived = function; }
-    public void setOnMessageReplied(MessageReplied<TypeReceived, TypeSent> function) { this.onMessageReplied = function; }
 
     public MessageReceived<TypeReceived> getOnMessageReceived() { return onMessageReceived; }
-    public MessageReplied<TypeReceived, TypeSent> getOnMessageReplied() { return onMessageReplied; }
 
     public Messager(String queueSend, String queueReceive, Class<TypeReceived> typeReceived, Class<TypeSent> typeSent) {
         this.queueReceive = queueReceive;
@@ -68,11 +65,13 @@ public class Messager<TypeReceived, TypeSent> {
                         receivedMessages.add((TextMessage) msg);
                         if(onMessageReceived != null) onMessageReceived.onMessage(messageParsed);
 
+                        /*
                         TextMessage pairMessage = getReceivedMessage(msg.getJMSCorrelationID());
                         if (pairMessage != null) {
                             TypeSent pairMessageParsed = gson.fromJson(pairMessage.getText(), typeSent);
                             if(onMessageReplied != null) onMessageReplied.onMessage(pairMessageParsed, messageParsed);
                         }
+                        */
                     } catch (JMSException e) {
                         e.printStackTrace();
                     }

@@ -12,9 +12,6 @@ public class BrokerGatewayToBank extends MessagerGateway<BankInterestReply, Bank
 
     public void send(BankInterestRequest message){ gateway.send(message); }
 
-    public void setOnMessageReplied(MessageReplied<BankInterestReply, BankInterestRequest> function) { gateway.setOnMessageReplied(function); }
-    public MessageReplied<BankInterestReply, BankInterestRequest> getOnMessageReplied() { return gateway.getOnMessageReplied(); }
-
     public void setOnMessageReceived(MessageReceived<BankInterestReply> function) { gateway.setOnMessageReceived(function); }
     public MessageReceived<BankInterestReply> getOnMessageReceived() { return gateway.getOnMessageReceived(); }
 }
