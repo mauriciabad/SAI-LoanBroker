@@ -10,7 +10,7 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 
 public class ApiClient<TypeReceived, TypeSent> {
-    private String url;
+    private String baseUrl;
 
     private Type typeReceived;
     private Type typeSent;
@@ -18,20 +18,32 @@ public class ApiClient<TypeReceived, TypeSent> {
     private Gson gson = new Gson();
     private HttpClient client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build();
 
-    public ApiClient(String url, Class<TypeReceived> typeReceived, Class<TypeSent> typeSent){
-        this.url = url;
+    public ApiClient(String baseUrl, Class<TypeReceived> typeReceived, Class<TypeSent> typeSent){
+        this.baseUrl = baseUrl;
         this.typeReceived = typeReceived;
         this.typeSent = typeSent;
     }
 
-    public void send(TypeSent message, MessageReceived<TypeReceived> onReply) {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .timeout(Duration.ofMinutes(1))
-                .header("Content-Type", "application/json")
-                .header("Accept", "text/plain")
-                .POST(HttpRequest.BodyPublishers.ofString(gson.toJson(message, typeSent)))
-                .build();
+    public void send(String endpoint, TypeSent message, MessageReceived<TypeReceived> onReply) {
+        HttpRequest request;
+
+        if (message != null) {
+            // Do POST
+            request = HttpRequest.newBuilder()
+                    .uri(URI.create(baseUrl + endpoint))
+                    .timeout(Duration.ofMinutes(1))
+                    .header("Content-Type", "application/json")
+                    .header("Accept", "text/plain")
+                    .POST(HttpRequest.BodyPublishers.ofString(gson.toJson(message, typeSent)))
+                    .build();
+        }else{
+            // Do GET
+            request = HttpRequest.newBuilder()
+                    .uri(URI.create(baseUrl + endpoint))
+                    .timeout(Duration.ofMinutes(1))
+                    .GET()
+                    .build();
+        }
 
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
             .thenAccept(response -> {
@@ -39,6 +51,7 @@ public class ApiClient<TypeReceived, TypeSent> {
                     if(onReply != null) onReply.onMessage(gson.fromJson(response.body(), typeReceived));
                 }else{
                     System.out.println("Response error " + response.statusCode());
+                    System.out.println(response);
                 }
             });
     }

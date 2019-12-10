@@ -35,6 +35,7 @@ public class BrokerController implements Initializable {
     private BrokerGatewayToLoanClient gatewayClient = new BrokerGatewayToLoanClient();
     private BrokerGatewayToBank gatewayBank = new BrokerGatewayToBank();
     private BrokerGatewayToArchive gatewayAchieve = new BrokerGatewayToArchive();
+    private BrokerGatewayToCreditAgency gatewayCreditAgency = new BrokerGatewayToCreditAgency();
 
     public BrokerController() {}
 
@@ -46,14 +47,16 @@ public class BrokerController implements Initializable {
             logger.info("messageReceived: " + original);
             customListView.addSent(original);
 
-            BankInterestRequest sent = new BankInterestRequest(original.getId(), original.getAmount(), original.getTime());
-            gatewayBank.send(sent, (reply) -> {
-                logger.info("messageReplied: " + reply);
-                customListView.add(original, reply);
+            gatewayCreditAgency.send(original.getSsn(), (creditReply) -> {
+                BankInterestRequest sent = new BankInterestRequest(original.getId(), original.getSsn(), original.getAmount(), original.getTime(), creditReply.getCreditScore(), creditReply.getHistory());
+                gatewayBank.send(sent, (reply) -> {
+                    logger.info("messageReplied: " + reply);
+                    customListView.add(original, reply);
 
-                if(reply.getInterest() >= 0) gatewayAchieve.send(new ArchiveRequest(original.getSsn(), original.getAmount(), reply.getBankId(), reply.getInterest(), original.getTime()));
+                    if(reply.getInterest() >= 0) gatewayAchieve.send(new ArchiveRequest(original.getSsn(), original.getAmount(), reply.getBankId(), reply.getInterest(), original.getTime()));
 
-                gatewayClient.reply(original, new LoanReply(reply.getId(), reply.getInterest(), reply.getBankId()));
+                    gatewayClient.reply(original, new LoanReply(reply.getId(), reply.getInterest(), reply.getBankId()));
+                });
             });
         });
     }
