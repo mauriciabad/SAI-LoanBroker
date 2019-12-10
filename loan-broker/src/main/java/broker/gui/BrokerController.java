@@ -47,8 +47,8 @@ public class BrokerController implements Initializable {
 
             BankInterestRequest sent = new BankInterestRequest(original.getId(), original.getAmount(), original.getTime());
             gatewayBank.send(sent, (reply) -> {
-                logger.info("messageReceived: " + reply);
-                customListView.add(reply, original);
+                logger.info("messageReplied: " + reply);
+                customListView.add(original, reply);
 
                 gatewayClient.reply(original, new LoanReply(reply.getId(), reply.getInterest(), reply.getBankId()));
             });

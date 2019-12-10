@@ -11,7 +11,7 @@ public class CustomListView<TypeReceived, TypeSent> {
         this.listView = listView;
     }
 
-    public void add(TypeReceived received, TypeSent sent){
+    public void add(TypeSent sent, TypeReceived received){
         boolean found = false;
 
 		for (int i = 0; i < listView.getItems().size() && !found; i++) {
@@ -25,7 +25,7 @@ public class CustomListView<TypeReceived, TypeSent> {
 
         if(!found) {
             Platform.runLater(() -> {
-                listView.getItems().add(new CustomListViewLine<TypeReceived, TypeSent>(null, received));
+                listView.getItems().add(new CustomListViewLine<TypeReceived, TypeSent>(sent, received));
                 listView.refresh();
             });
         }else{
@@ -35,6 +35,6 @@ public class CustomListView<TypeReceived, TypeSent> {
         }
     }
 
-    public void addReceived(TypeReceived received) { this.add(received, null); }
-    public void addSent(TypeSent sent) { this.add(null, sent); }
+    public void addReceived(TypeReceived received) { this.add(null, received); }
+    public void addSent(TypeSent sent) { this.add(sent, null); }
 }

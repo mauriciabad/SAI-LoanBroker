@@ -46,7 +46,7 @@ public class LoanClientController implements Initializable {
 
         gateway.send(loanRequest, reply -> {
             logger.info("messageReplied: " + reply);
-            customListView.add(reply, loanRequest);
+            customListView.add(loanRequest, reply);
         });
         logger.info("Sent the loan request: " + loanRequest);
     }
