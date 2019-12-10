@@ -30,7 +30,7 @@ class BankController implements Initializable {
     @FXML
     public TextField tfInterest;
 
-    private BankGatewayToBroker gateway;
+    private BankGatewayToBroker gateway = new BankGatewayToBroker();
 
     public BankController(String queueName, String bankId){
         this.bankId = bankId;
@@ -45,8 +45,8 @@ class BankController implements Initializable {
 
         CustomListViewLine<BankInterestRequest, BankInterestReply> listViewLine = listView.getSelectionModel().getSelectedItem();
         if (listViewLine!= null){
-            customListView.addSent(bankInterestReply);
-            gateway.send(bankInterestReply);
+            customListView.add(listViewLine.getReceived(), bankInterestReply);
+            gateway.reply(listViewLine.getReceived(), bankInterestReply);
         }
 
     }
@@ -55,7 +55,6 @@ class BankController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         customListView = new CustomListView<BankInterestRequest, BankInterestReply>(listView);
 
-        gateway = new BankGatewayToBroker();
         gateway.setOnMessageReceived(msg -> {
             logger.info("messageReceived: " + msg);
             customListView.addReceived(msg);

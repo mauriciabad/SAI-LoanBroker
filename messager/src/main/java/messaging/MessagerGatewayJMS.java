@@ -8,9 +8,11 @@ public class MessagerGatewayJMS<TypeReceived, TypeSent> extends MessagerGateway<
         messager = new Messager<TypeReceived, TypeSent>(queueTo, queueFrom, typeReceived, typeSent);
     }
 
-    public void send(TypeSent message) {
-        messager.send(message);
+    public void send(TypeSent message, MessageReceived<TypeReceived> onReply) {
+        messager.send(message, onReply);
     }
+
+    public void reply(TypeReceived original, TypeSent reply) { messager.reply(original, reply); }
 
     public void setOnMessageReceived(MessageReceived<TypeReceived> function) { messager.setOnMessageReceived(function); }
     public MessageReceived<TypeReceived> getOnMessageReceived() { return messager.getOnMessageReceived(); }

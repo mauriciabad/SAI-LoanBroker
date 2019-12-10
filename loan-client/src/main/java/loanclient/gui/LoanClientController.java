@@ -30,7 +30,7 @@ public class LoanClientController implements Initializable {
     @FXML
     private ListView<CustomListViewLine<LoanReply, LoanRequest>> listView;
 
-    private LoanClientGatewayToBroker gateway;
+    private LoanClientGatewayToBroker gateway = new LoanClientGatewayToBroker();
 
     public LoanClientController(){}
 
@@ -44,7 +44,10 @@ public class LoanClientController implements Initializable {
 
         customListView.addSent(loanRequest);
 
-        gateway.send(loanRequest);
+        gateway.send(loanRequest, reply -> {
+            logger.info("messageReplied: " + reply);
+            customListView.add(reply, loanRequest);
+        });
         logger.info("Sent the loan request: " + loanRequest);
     }
 
@@ -55,11 +58,5 @@ public class LoanClientController implements Initializable {
         tfTime.setText("30");
 
         customListView = new CustomListView<LoanReply, LoanRequest>(listView);
-
-        gateway = new LoanClientGatewayToBroker();
-        gateway.setOnMessageReceived(obj -> {
-            logger.info("messageReceived: " + obj);
-            customListView.addReceived(obj);
-        });
     }
 }
