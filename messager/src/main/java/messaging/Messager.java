@@ -89,11 +89,11 @@ public class Messager<TypeReceived, TypeSent> {
     }
 
     public void reply(TypeReceived original, TypeSent sent){
-        String originalJson = gson.toJson(sent);
-        for (TextMessage message : sentMessages.values()) {
+        String originalJson = gson.toJson(original);
+        for (TextMessage msg : receivedMessages) {
             try {
-                if(message.getText().equals(originalJson)) {
-                    reply(message.getJMSMessageID(), sent);
+                if(msg.getText().equals(originalJson)) {
+                    reply(msg, sent);
                     return;
                 }
             } catch (JMSException e) {
@@ -102,22 +102,20 @@ public class Messager<TypeReceived, TypeSent> {
         }
     }
 
-    private void reply(String id, TypeSent sent) {
+    private void reply(TextMessage receivedMsg, TypeSent sent) {
         try {
-            TextMessage receivedMsg = getReceivedMessage(id);
-            if(receivedMsg!=null) {
-                TextMessage sentMsg = session.createTextMessage(gson.toJson(sent));
+            TextMessage sentMsg = session.createTextMessage(gson.toJson(sent));
 
-                sentMsg.setJMSCorrelationID(receivedMsg.getJMSMessageID());
-                Destination returnAddress = receivedMsg.getJMSReplyTo();
-                sentMsg.setJMSDestination(returnAddress);
+            sentMsg.setJMSCorrelationID(receivedMsg.getJMSMessageID());
+            Destination returnAddress = receivedMsg.getJMSReplyTo();
+            sentMsg.setJMSDestination(returnAddress);
 
-                producer.send(returnAddress, sentMsg);
+            producer.send(returnAddress, sentMsg);
 
-                sentMessages.put(receivedMsg.getJMSMessageID(), sentMsg);
-            }
+            sentMessages.put(receivedMsg.getJMSMessageID(), sentMsg);
+
         } catch (JMSException e) {
-            System.out.println("Error replying message " + id + " with: " + sent);
+            System.out.println("Error replying message " + receivedMsg + " with: " + sent);
             e.printStackTrace();
         }
     }
@@ -127,6 +125,7 @@ public class Messager<TypeReceived, TypeSent> {
         try {
             TextMessage sentMsg = session.createTextMessage(gson.toJson(message, typeSent));
             sentMsg.setJMSDestination(destinationSend);
+            sentMsg.setJMSReplyTo(destinationReceive);
             producer.send(destinationSend, sentMsg);
             sentMessages.put(sentMsg.getJMSMessageID(), sentMsg);
             onReplys.put(sentMsg.getJMSMessageID(), onReply);

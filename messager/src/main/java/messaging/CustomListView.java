@@ -16,7 +16,7 @@ public class CustomListView<TypeReceived, TypeSent> {
 
 		for (int i = 0; i < listView.getItems().size() && !found; i++) {
 			CustomListViewLine<TypeReceived, TypeSent> pair =  listView.getItems().get(i);
-			if (pair.getReceived().equals(received) || pair.getSent().equals(sent)) {
+			if ((received != null && received.equals(pair.getReceived())) || (sent != null && sent.equals(pair.getSent()))) {
 				pair.setReceived(received);
 				pair.setSent(sent);
 				found = true;

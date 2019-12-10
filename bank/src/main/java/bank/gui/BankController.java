@@ -44,7 +44,7 @@ class BankController implements Initializable {
         BankInterestReply bankInterestReply = new BankInterestReply(UUID.randomUUID().toString(), interest, bankId);
 
         CustomListViewLine<BankInterestReply, BankInterestRequest> listViewLine = listView.getSelectionModel().getSelectedItem();
-        if (listViewLine!= null){
+        if (listViewLine != null && listViewLine.getReceived() == null){
             customListView.add(listViewLine.getSent(), bankInterestReply);
             gateway.reply(listViewLine.getSent(), bankInterestReply);
         }
